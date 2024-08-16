@@ -24,10 +24,11 @@ Ensure you have the following installed:
 
 ## Getting Started
 
-### 1. Go to Project Directory
-Make sure you are in the project directory:
+### 1. Clone the Repository
+First, clone the repository to your local machine:
 
 ```bash
+git clone https://github.com/vignesh-cloud-prog/treeview-react.git
 cd treeview-app
 ```
 
