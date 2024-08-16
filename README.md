@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# TreeView App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The TreeView App is a React-based application that renders a tree structure with nested nodes. The application uses Zustand for state management and Tailwind CSS for styling. This README will guide you through setting up the project, running it, and testing the application.
 
-In the project directory, you can run:
+## Features
 
-### `yarn start`
+- **TreeView Component:** Displays hierarchical tree data.
+- **Expandable Nodes:** Nodes can be expanded or collapsed to show or hide child nodes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React:** For building the user interface.
+- **Zustand:** For state management.
+- **Tailwind CSS:** For styling.
 
-### `yarn test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ensure you have the following installed:
 
-### `yarn build`
+- **Node.js:** Version 14 or later
+- **Yarn:** For managing dependencies (or npm if preferred)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Go to Project Directory
+Make sure you are in the project directory:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+cd treeview-app
+```
 
-### `yarn eject`
+### 2. Install Dependencies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Install the project dependencies using Yarn:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+yarn install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+If you prefer npm, you can use:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install
+```
 
-## Learn More
+### 3. Start the Development Server
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To start the development server and view the application, run:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+yarn start
+```
 
-### Code Splitting
+This will start the application on `http://localhost:3000`. You can view it in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 4. Running Tests
 
-### Analyzing the Bundle Size
+To run the tests, use the following command:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+yarn test
+```
 
-### Making a Progressive Web App
+This will execute all the test cases defined in the `src/__tests__` directory and display the results in your terminal.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Project Structure
 
-### Advanced Configuration
+Here's an overview of the project structure:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **`src/`**: Contains the source code of the application.
+  - **`components/`**: Contains React components.
+    - `TreeNodeComponent.js`: Renders individual nodes of the tree.
+    - `TreeView.js`: The main component that renders the tree using `TreeNodeComponent`.
+  - **`store/`**: Contains Zustand store logic.
+    - `useTreeStore.js`: Defines the Zustand store for managing tree data.
+  - **`__tests__/`**: Contains test files.
+    - `TreeNodeComponent.test.js`: Tests for `TreeNodeComponent`.
+    - `TreeView.test.js`: Tests for `TreeView`.
 
-### Deployment
+## Component Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### TreeNodeComponent
 
-### `yarn build` fails to minify
+The `TreeNodeComponent` renders an individual node in the tree.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Props:**
+
+- `node`: An object representing a tree node. It should have the following structure:
+  ```json
+  {
+    "id": number,
+    "name": string,
+    "children": array (optional)
+  }
+  ```
+
+**Example Usage:**
+
+```jsx
+<TreeNodeComponent node={node} />
+```
+
+### TreeView
+
+The `TreeView` component renders the entire tree structure using the `TreeNodeComponent`.
+
+**Usage:**
+
+```jsx
+<TreeView />
+```
+
+## Documentation
+
+- **`useTreeStore.js`**: Contains Zustand store configuration. It manages tree data and provides functions to interact with the tree.
+- **`TreeNodeComponent.js`**: Displays individual nodes and supports expansion and collapse.
+- **`TreeView.js`**: Renders the tree structure by mapping over the data and using `TreeNodeComponent`.
+
+
+## Contact
+
+For any questions or issues, please contact [vighnesha.nittur@gmail.com](mailto:vighnesha.nittur@gmail.com).

@@ -1,12 +1,12 @@
+import React, { Suspense, lazy } from 'react';
 import './App.css';
-import TreeViewComponent from './components/TreeViewComponent';
+const TreeViewComponent = lazy(() => import('./components/TreeViewComponent'));
 
 function App() {
   return (
-    <div className="App">
-      
-   <TreeViewComponent />
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <TreeViewComponent />
+    </Suspense>
   );
 }
 

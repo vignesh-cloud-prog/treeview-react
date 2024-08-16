@@ -6,7 +6,7 @@ const TreeView = () => {
     const { treeData } = useTreeStore();
 
     return (
-        <div className="treeview-container p-4 bg-gray-100 rounded-lg">
+        <div data-testid="treeview" className="treeview-container p-4 bg-gray-100 rounded-lg">
             {treeData.map((node) => (
                 <TreeNodeComponent key={node.id} node={node} />
             ))}
